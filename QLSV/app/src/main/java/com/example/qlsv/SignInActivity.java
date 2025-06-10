@@ -2,6 +2,7 @@ package com.example.qlsv;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +14,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.qlsv.Entity.AdminUser;
 import com.example.qlsv.Service.Apimanager;
+import com.example.qlsv.utils.SharedPreferencesManager;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -37,7 +40,15 @@ public class SignInActivity extends AppCompatActivity {
             Apimanager apimanager = new Apimanager(SignInActivity.this);
             apimanager.SignIn(phone, password, new Apimanager.LoginCallback() {
                 @Override
-                public void onSuccess(String token) {
+                public void onSuccess(String token, AdminUser admin) {
+                    // Lưu token và thông tin admin
+                    SharedPreferencesManager prefs = new SharedPreferencesManager(SignInActivity.this);
+                    prefs.saveToken(token);
+                    Log.d("DEBUG", "Full name: " + admin.getFullName());
+                    Log.d("DEBUG", "Avatar URL: " + admin.getAvatarUrl());
+
+                    prefs.saveAdminInfo(admin);
+
                     Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

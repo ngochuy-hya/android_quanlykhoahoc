@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/white"
+    android:id="@+id/fragment_profile"
+    tools:context=".fragments.ProfileFragment"
+    >
+    <LinearLayout
+        android:id="@+id/profileFragmentNavBar"
+        style="@style/Profile_NavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <Space
+            style="@style/Profile_NavBar_BackBtn"
+            />
+        <TextView
+            style="@style/Profile_NavBar_Text"
+            android:text="My Profile" />
+        <ImageButton
+            style="@style/Profile_NavBar_MoreBtn"
+            android:contentDescription="@string/description_more_btn" />
+    </LinearLayout>
+    <!--navbar-->
+    <!---->
+    <androidx.core.widget.NestedScrollView
+        style="@style/Profile_NestedScroll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileFragmentNavBar"
+        >
+        <LinearLayout
+            style="@style/Profile_LayoutVertical"
+            android:paddingBottom="200dp">
+
+            <androidx.cardview.widget.CardView
+                style="@style/Profile_Card"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    >
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/cardAvatarImageView"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_profile_avt"
+                        app:shapeAppearanceOverlay="@style/Circular"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:id="@+id/cardNameTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/update_pending"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="5dp"
+                            />
+                        <TextView
+                            android:id="@+id/cardPhoneTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/update_pending"
+                            android:textSize="18sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--All-->
+            <TextView
+                style="@style/Profile_LabelText"
+                android:layout_marginTop="20dp"
+                android:textSize="22sp"
+                android:text="Shared"/>
+            <androidx.cardview.widget.CardView
+                style="@style/Profile_Card">
+                <LinearLayout
+                    style="@style/Profile_Card_Layout">
+                    <!-- Thông tin cá nhân -->
+                    <LinearLayout
+                        android:id="@+id/navigateToUserInfo"
+                        style="@style/Profile_NavItem_Layout">
+                        <ImageView
+                            style="@style/Profile_NavItem_Img"
+                            android:src="@drawable/ic_folder"
+                            app:tint="@color/black"
+                            />
+                        <TextView
+                            style="@style/Profile_NavItem_Text"
+                            android:text="Personal information"
+                            />
+                        <ImageView
+                            style="@style/Profile_NavItem_Img"
+                            android:src="@drawable/ic_chevron_right" />
+                    </LinearLayout>
+
+
+                    <!-- Lịch khám -->
+                    <LinearLayout
+                        android:id="@+id/navigateToAppointmentSchedule"
+                        style="@style/Profile_NavItem_Layout">
+                        <ImageView
+                            style="@style/Profile_NavItem_Img"
+                            android:src="@drawable/ic_appointment"
+                            app:tint="@color/black" />
+                        <TextView
+                            android:text="Examination schedule"
+                            style="@style/Profile_NavItem_Text"/>
+                        <ImageView
+                            style="@style/Profile_NavItem_Img"
+                            android:src="@drawable/ic_chevron_right" />
+                    </LinearLayout>
+
+                    <!-- Thay đổi mật khẩu -->
+                    <LinearLayout
+                        android:id="@+id/navigateToChangePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true"
+                        >
+                        <ImageView
+                            style="@style/Profile_NavItem_Img"
+                            android:src="@drawable/ic_password"
+                            app:tint="@color/black" />
+                        <TextView
+                            style="@style/Profile_NavItem_Text"
+                            android:text="Change password" />
+                        <ImageView
+                            style="@style/Profile_NavItem_Img"
+                            android:src="@drawable/ic_chevron_right" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                style="@style/Profile_LabelText"
+                android:layout_marginTop="20dp"
+                android:text="Options"
+                android:textSize="22sp"/>
+
+            <androidx.cardview.widget.CardView style="@style/Profile_Card">
+                <LinearLayout style="@style/Profile_Card_Layout">
+
+                    <!-- Logout -->
+                    <LinearLayout
+                        android:id="@+id/logoutButton"
+                        style="@style/Profile_NavItem_Layout">
+                        <ImageView
+                            style="@style/Profile_NavItem_Img"
+                            android:src="@drawable/ic_logout"/>
+                        <TextView
+                            style="@style/Profile_NavItem_Text"
+                            android:text="Logout"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
