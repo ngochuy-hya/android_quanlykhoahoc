@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+import com.example.qlsv.Entity.AdminUser;
 import com.example.qlsv.MainActivity;
 import com.example.qlsv.Service.DTO.Request.ForgotPasswordRequest;
 import com.example.qlsv.Service.DTO.Request.LoginRequest;
 import com.example.qlsv.Service.DTO.Request.ResetPasswordRequest;
 import com.example.qlsv.Service.DTO.Response.LoginResponse;
+import com.example.qlsv.Service.DTO.Response.ScheduleResponse;
 import com.example.qlsv.SignInActivity;
 import com.example.qlsv.utils.SharedPreferencesManager;
 
@@ -17,15 +19,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Apimanager {
-    private ApiService apiService;
-    private SharedPreferencesManager preferencesManager;
+
+    private final ApiService apiService;
+    private final SharedPreferencesManager preferencesManager;
 
     public Apimanager(Context context) {
-        // Sử dụng Retrofit đã cấu hình sẵn
         apiService = RetrofitClient.getInstance().create(ApiService.class);
         preferencesManager = new SharedPreferencesManager(context);
     }
 
+    // ===================== LOGIN =====================
     public void SignIn(String phone, String password, LoginCallback callback) {
         LoginRequest request = new LoginRequest();
         request.setUsername(phone);
@@ -36,8 +39,9 @@ public class Apimanager {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     String token = response.body().getToken();
+                    AdminUser admin = response.body().getAdmin();
                     preferencesManager.saveToken(token);
-                    callback.onSuccess(token);
+                    callback.onSuccess(token, admin);
                 } else {
                     callback.onFailure("Sai tài khoản hoặc mật khẩu!");
                 }
@@ -49,10 +53,38 @@ public class Apimanager {
             }
         });
     }
+
     public interface LoginCallback {
-        void onSuccess(String token);
+        void onSuccess(String token, AdminUser admin);
         void onFailure(String message);
     }
+
+    // ===================== LỊCH HỌC GẦN NHẤT =====================
+    public void getNearestSchedule(final ScheduleCallback callback) {
+        String token = "Bearer " + preferencesManager.getToken();
+        apiService.getNearestSchedule(token).enqueue(new Callback<ScheduleResponse>() {
+            @Override
+            public void onResponse(Call<ScheduleResponse> call, Response<ScheduleResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    callback.onSuccess(response.body());
+                } else {
+                    callback.onFailure("Không tìm thấy lịch học.");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ScheduleResponse> call, Throwable t) {
+                callback.onFailure("Lỗi kết nối: " + t.getMessage());
+            }
+        });
+    }
+
+    public interface ScheduleCallback {
+        void onSuccess(ScheduleResponse schedule);
+        void onFailure(String message);
+    }
+
+    // ===================== QUÊN MẬT KHẨU =====================
     public void forgotPassword(String email, Context context, ForgotPasswordCallback callback) {
         ForgotPasswordRequest request = new ForgotPasswordRequest(email);
 
@@ -72,10 +104,13 @@ public class Apimanager {
             }
         });
     }
+
     public interface ForgotPasswordCallback {
         void onSuccess();
         void onFailure(String message);
     }
+
+    // ===================== ĐẶT LẠI MẬT KHẨU =====================
     public void resetPassword(String email, String otp, String newPassword, Context context) {
         ResetPasswordRequest request = new ResetPasswordRequest(email, otp, newPassword);
 

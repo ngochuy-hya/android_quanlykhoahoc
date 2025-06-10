@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_edit_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/white"
+    tools:context=".fragments.EditInfoFragment"
+    >
+    <!--navbar-->
+    <LinearLayout
+        android:id="@+id/editProfileFragmentNavBar"
+        style="@style/Profile_NavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backToPreFrBtn"
+            style="@style/Profile_NavBar_BackBtn"
+            android:contentDescription="@string/description_back_fr_btn" />
+
+        <TextView
+            style="@style/Profile_NavBar_Text"
+            android:text="@string/title_fr_edit_info" />
+
+        <ImageButton
+            style="@style/Profile_NavBar_MoreBtn"
+            android:contentDescription="@string/description_more_btn" />
+    </LinearLayout>
+
+    <!--info-->
+    <androidx.core.widget.NestedScrollView
+        style="@style/Profile_NestedScroll"
+        app:layout_constraintTop_toBottomOf="@id/editProfileFragmentNavBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <LinearLayout
+            style="@style/Profile_LayoutVertical">
+            <LinearLayout
+                style="@style/Profile_InputGroup">
+                <TextView
+                    style="@style/Profile_LabelText"
+                    android:text="Fullname"
+                    />
+                <EditText
+                    android:id="@+id/etFullName"
+                    style="@style/Profile_InputText"
+                    android:hint="Enter fullname"
+                    android:inputType="text"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/Profile_InputGroup">
+                <TextView
+                    style="@style/Profile_LabelText"
+                    android:text="Email address"
+                    />
+                <EditText
+                    android:id="@+id/etEmailAddress"
+                    style="@style/Profile_InputText"
+                    android:hint="Enter email"
+                    android:inputType="text"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Profile_InputGroup">
+                <TextView
+                    style="@style/Profile_LabelText"
+                    android:text="User name"
+                    />
+                <EditText
+                    android:id="@+id/etUsername"
+                    style="@style/Profile_InputText"
+                    android:hint="Enter user name"
+                    android:inputType="text"
+                    />
+            </LinearLayout>
+
+
+
+            <!--save button-->
+            <Button
+                android:id="@+id/saveInfoBtn"
+                style="@style/Profile_SaveBtn"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="20dp"
+                android:text="Lưu" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

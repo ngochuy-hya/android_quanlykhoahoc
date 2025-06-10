@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_pending">Update pending</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_other">Other</string>
+    <array name="gender_list">
+        <item>@string/gender_male</item>
+        <item>@string/gender_female</item>
+        <item>@string/gender_other</item>
+    </array>
+
+    <string name="title_fr_edit_info">Edit Profile</string>
+    <string name="description_back_fr_btn">Back</string>
+    <string name="description_more_btn">More</string>
+    <string name="confirm_logout">Do you want to log out of this account?</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="remove_relative">Remove Relative</string>
+    <string name="relative_avatar_description">Relative Avatar</string>
+
+    <string-array name="relationships_array">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Brother</item>
+        <item>Sister</item>
+        <item>Other</item>
+        <item>Friend</item>
+    </string-array>
+</resources>

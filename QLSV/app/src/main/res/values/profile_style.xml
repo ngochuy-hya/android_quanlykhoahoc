@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Profile_NestedScroll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:fillViewport">true</item>
+    </style>
+    <style name="Profile_LayoutVertical">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Profile_Card" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+    <style name="Profile_Card_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:divider">?android:attr/dividerHorizontal</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="Profile_NavItem_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="Profile_NavItem_Text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Profile_NavItem_Img">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+
+    <style name="Profile_SaveBtn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_rounded_btn</item>
+    </style>
+
+    <style name="Profile_BoldText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Profile_PrimaryText" parent="Profile_BoldText">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="Profile_SecondaryText" parent="Profile_BoldText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Profile_LabelText" parent="Profile_BoldText">
+        <item name="android:textColor">@color/dark_gray</item>
+    </style>
+
+    <style name="Profile_InputGroup" parent="Profile_LayoutVertical">
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+    <style name="Profile_InputText" parent="Profile_SecondaryText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/bg_input_field</item>
+    </style>
+    <style name="Profile_InputSpinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@drawable/bg_input_field</item>
+    </style>
+
+
+    <style name="Profile_NavBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginTop">48dp</item>
+    </style>
+    <style name="Profile_NavBar_Btn">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+    <style name="Profile_NavBar_BackBtn" parent="Profile_NavBar_Btn">
+        <item name="android:background">@drawable/circle</item>
+        <item name="android:backgroundTint">@color/lightGray</item>
+        <item name="android:src">@drawable/ic_arrow_left</item>
+    </style>
+    <style name="Profile_NavBar_MoreBtn" parent="Profile_NavBar_Btn">
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:src">@drawable/ic_more_vert</item>
+    </style>
+    <style name="Profile_NavBar_Text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

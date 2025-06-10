@@ -1,0 +1,28 @@
+<!--<vector xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:width="448dp"-->
+<!--    android:height="512dp"-->
+<!--    android:viewportWidth="448"-->
+<!--    android:viewportHeight="512"-->
+<!--    tools:ignore="VectorRaster">-->
+
+<!--    &lt;!&ndash; Đường path của SVG &ndash;&gt;-->
+<!--    <path-->
+<!--        android:fillColor="@color/white"-->
+<!--        android:pathData="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>-->
+<!--</vector>-->
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="71dp"
+    android:height="71dp"
+    android:viewportWidth="71"
+    android:viewportHeight="71">
+    <group>
+        <path
+            android:fillColor="#928888"
+            android:pathData="M35.5,1C54.688,1 70,16.312 70,35.5S54.688,70 35.5,70 1,54.688 1,35.5 16.312,1 35.5,1z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M35.5,36C38.152,36 40.696,34.946 42.571,33.071 44.446,31.196 45.5,28.652 45.5,26 45.5,23.348 44.446,20.804 42.571,18.929 40.696,17.054 38.152,16 35.5,16 32.848,16 30.304,17.054 28.429,18.929 26.554,20.804 25.5,23.348 25.5,26 25.5,28.652 26.554,31.196 28.429,33.071 30.304,34.946 32.848,36 35.5,36zM31.93,39.75C24.234,39.75 18,45.984 18,53.68 18,54.961 19.039,56 20.32,56L50.68,56C51.961,56 53,54.961 53,53.68 53,45.984 46.766,39.75 39.07,39.75L31.93,39.75z" />
+    </group>
+</vector>

@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="5dp"
+    android:height="21dp"
+    android:viewportWidth="5"
+    android:viewportHeight="21">
+
+    <!-- Circle 1 -->
+    <path
+        android:fillColor="#171D32"
+        android:pathData="M2.0996,0.23652a2,2 0 1,1 0,4a2,2 0 1,1 0,-4z" />
+
+    <!-- Circle 2 -->
+    <path
+        android:fillColor="#171D32"
+        android:pathData="M2.14367,8.2365a2,2 0 1,1 0,4a2,2 0 1,1 0,-4z" />
+
+    <!-- Circle 3 -->
+    <path
+        android:fillColor="#171D32"
+        android:pathData="M2.18774,16.2365a2,2 0 1,1 0,4a2,2 0 1,1 0,-4z" />
+</vector>
