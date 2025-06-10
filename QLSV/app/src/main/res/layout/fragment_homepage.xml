@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:layout_marginTop="48dp"
+    android:id="@+id/fragment_homepage"
+    tools:context=".fragments.HomepageFragment">
+
+    <FrameLayout
+        android:id="@+id/fragment_search"
+        android:layout_width="404dp"
+        android:layout_height="793dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageViewAvatar"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/girlface"
+
+                app:shapeAppearanceOverlay="@style/Circular" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="Hi, Jonathan"
+                    android:textColor="#6D707C"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="5dp"
+
+                    android:text="May you always be healthy"
+                    android:textColor="#B6B7BE"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <!-- Icon chuông -->
+            <ImageView
+                android:id="@+id/bellIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_bell" />
+
+            <!-- Dấu chấm đỏ thông báo -->
+            <View
+                android:id="@+id/notificationDot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/red_dot"
+                android:visibility="gone" /> <!-- Đặt visibility ban đầu là gone để ẩn đi -->
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.example.qlsv.SearchBarView
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/appointmentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="369dp"
+
+                    android:layout_height="150dp"
+                    android:padding="16dp"
+
+                    app:cardBackgroundColor="@color/purple"
+
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+
+                            android:text="Appointment"
+
+                            android:textColor="#C7C2EB"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_appointment"
+                            app:layout_constraintStart_toStartOf="@+id/textView11"
+                            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                        <TextView
+                            android:id="@+id/txtAppointmentDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+
+                            android:text="22 Octorber, 2023"
+
+                            android:textColor="#C7C2EB"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+
+
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                            app:layout_constraintStart_toEndOf="@+id/imageView7"
+                            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/ic_clock"
+                            app:layout_constraintStart_toStartOf="@+id/imageView7"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+                        <TextView
+                            android:id="@+id/txtAppointmentTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+
+                            android:text="08:00AM-10.30AM"
+
+                            android:textColor="#C7C2EB"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                            app:layout_constraintStart_toEndOf="@+id/imageView8"
+                            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="16dp"
+
+                            android:background="@drawable/circle"
+
+                            android:visibility="gone"
+
+                            android:padding="8dp"
+                            android:src="@drawable/ic_compose"
+
+                            app:layout_constraintBottom_toBottomOf="@+id/txtAppointmentTime"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txtAppointmentDate"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    app:cardCornerRadius="16dp"
+
+                    app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline5"
+                    app:layout_constraintTop_toTopOf="@+id/guideline6">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp">
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/appointmentImage"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_marginStart="16dp"
+
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/girlface"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/Rounded" />
+
+                        <TextView
+                            android:id="@+id/txtAppointmentName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+
+                            android:text="Dr.Richar Kandowen"
+                            android:textColor="#5F616F"
+                            android:textSize="14.5sp"
+                            android:textStyle="bold"
+
+                            app:layout_constraintStart_toEndOf="@+id/appointmentImage"
+                            app:layout_constraintTop_toTopOf="@+id/appointmentImage" />
+
+                        <TextView
+                            android:id="@+id/txtAppointmentExpertise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Child Specialist"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp"
+
+
+                            app:layout_constraintBottom_toBottomOf="@+id/appointmentImage"
+                            app:layout_constraintStart_toStartOf="@+id/txtAppointmentName"
+                            app:layout_constraintTop_toBottomOf="@+id/txtAppointmentName" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.9" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="132dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal"
+
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:text="Schedule"
+
+                    android:textColor="#545766"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSeeAllHealthServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="See All"
+
+                    android:textColor="#968BDD"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewHealthServicesShimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewHealthServices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:text="Teacher"
+
+                    android:textColor="#545766"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSeeAllDoctors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="See All"
+
+                    android:textColor="#968BDD"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/doctorShimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewDoctorsShimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDoctors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:visibility="gone"
+
+                android:layout_marginTop="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:text="Student"
+
+                    android:textColor="#545766"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSeeAllClinics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="See All"
+
+                    android:textColor="#968BDD"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/clinicShimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewClinicsShimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewClinics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+
+                    android:text="Popular Blogs"
+
+                    android:textColor="#545766"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSeeAllBlogs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="See All"
+
+                    android:textColor="#968BDD"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/blogsShimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewBlogsShimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewBlogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

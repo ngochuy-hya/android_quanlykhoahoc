@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/fragment_homepage"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/fragment_calender"
+        android:icon="@drawable/ic_student"
+        android:title="Student" />
+
+    <item
+        android:id="@+id/fragment_love"
+        android:icon="@drawable/ic_schedule"
+        android:title="Schedule" />
+
+    <item
+        android:id="@+id/fragment_blog"
+        android:icon="@drawable/ic_teacher"
+        android:title="Teacher"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/fragment_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+</menu>
