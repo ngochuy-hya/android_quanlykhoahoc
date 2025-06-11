@@ -89,7 +89,7 @@
 
             <!--save button-->
             <Button
-                android:id="@+id/saveInfoBtn"
+                android:id="@+id/btnSave"
                 style="@style/Profile_SaveBtn"
                 android:layout_marginTop="100dp"
                 android:layout_marginBottom="20dp"

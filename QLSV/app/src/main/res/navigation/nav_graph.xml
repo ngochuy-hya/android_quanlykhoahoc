@@ -2,117 +2,144 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-
-    app:startDestination="@id/fragment_homepage">
+    app:startDestination="@id/homepageFragment">
 
     <fragment
-        android:id="@+id/fragment_homepage"
+        android:id="@+id/homepageFragment"
         android:name="com.example.qlsv.fragments.HomepageFragment"
-        android:label="Homepage" >
-
+        android:label="HomepageFragment">
+        <action
+            android:id="@+id/action_homepageFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_blog"-->
-<!--        android:name="com.example.doanf1.fragments.BlogFragment"-->
-<!--        android:label="Blog" >-->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.qlsv.fragments.ProfileFragment"
+        android:label="Profile">
+        <action
+            android:id="@+id/action_profileFragment_to_userInfoFragment"
+            app:destination="@id/fragment_user_info" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/fragment_change_password" />
+    </fragment>
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_to_fragment_homepage"-->
-<!--            app:destination="@id/fragment_homepage" />-->
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.qlsv.fragments.UserInfoFragment"
+        android:label="UserInfoFragment">
+        <action
+            android:id="@+id/action_userInfoFragment_to_editInfoFragment"
+            app:destination="@id/fragment_edit_info" />
+    </fragment>
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_to_fragment_add_new_blog"-->
-<!--            app:destination="@id/fragment_add_new_blog" />-->
+    <fragment
+        android:id="@+id/editInfoFragment"
+        android:name="com.example.qlsv.fragments.EditInfoFragment"
+        android:label="EditInfoFragment" />
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_to_fragment_blog_detail"-->
-<!--            app:destination="@id/fragment_blog_detail" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_blog"-->
+    <!--        android:name="com.example.doanf1.fragments.BlogFragment"-->
+    <!--        android:label="Blog" >-->
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_to_fragment_blog_saved"-->
-<!--            app:destination="@id/fragment_blog_saved" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_to_fragment_homepage"-->
+    <!--            app:destination="@id/fragment_homepage" />-->
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_to_fragment_blog_written"-->
-<!--            app:destination="@id/fragment_blog_written" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_to_fragment_add_new_blog"-->
+    <!--            app:destination="@id/fragment_add_new_blog" />-->
 
-<!--        <argument-->
-<!--            android:name="newBlog"-->
-<!--            app:argType="com.example.doanf1.services.models.Blog"-->
-<!--            />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_to_fragment_blog_detail"-->
+    <!--            app:destination="@id/fragment_blog_detail" />-->
 
-<!--    </fragment>-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_to_fragment_blog_saved"-->
+    <!--            app:destination="@id/fragment_blog_saved" />-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_add_new_blog"-->
-<!--        android:name="com.example.doanf1.fragments.AddNewBlogFragment"-->
-<!--        android:label="Add New Blog">-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_to_fragment_blog_written"-->
+    <!--            app:destination="@id/fragment_blog_written" />-->
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_add_new_blog_to_fragment_blog"-->
-<!--            app:destination="@id/fragment_blog" />-->
+    <!--        <argument-->
+    <!--            android:name="newBlog"-->
+    <!--            app:argType="com.example.doanf1.services.models.Blog"-->
+    <!--            />-->
 
-<!--    </fragment>-->
+    <!--    </fragment>-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_edit_blog"-->
-<!--        android:name="com.example.doanf1.fragments.EditBlogFragment"-->
-<!--        android:label="Edit Blog">-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_add_new_blog"-->
+    <!--        android:name="com.example.doanf1.fragments.AddNewBlogFragment"-->
+    <!--        android:label="Add New Blog">-->
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_edit_blog_to_fragment_blog_written"-->
-<!--            app:destination="@id/fragment_blog_written" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_add_new_blog_to_fragment_blog"-->
+    <!--            app:destination="@id/fragment_blog" />-->
 
-<!--        <argument-->
-<!--            android:name="blog"-->
-<!--            app:argType="com.example.doanf1.services.models.Blog"-->
-<!--            />-->
+    <!--    </fragment>-->
 
-<!--    </fragment>-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_edit_blog"-->
+    <!--        android:name="com.example.doanf1.fragments.EditBlogFragment"-->
+    <!--        android:label="Edit Blog">-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_blog_detail"-->
-<!--        android:name="com.example.doanf1.fragments.BlogDetailFragment"-->
-<!--        android:label="Blog Detail">-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_edit_blog_to_fragment_blog_written"-->
+    <!--            app:destination="@id/fragment_blog_written" />-->
 
-<!--        <argument-->
-<!--            android:name="blog"-->
-<!--            app:argType="com.example.doanf1.services.models.Blog"-->
-<!--            />-->
+    <!--        <argument-->
+    <!--            android:name="blog"-->
+    <!--            app:argType="com.example.doanf1.services.models.Blog"-->
+    <!--            />-->
 
-<!--    </fragment>-->
+    <!--    </fragment>-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_blog_saved"-->
-<!--        android:name="com.example.doanf1.fragments.BlogSavedFragment"-->
-<!--        android:label="Blog Saved">-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_blog_detail"-->
+    <!--        android:name="com.example.doanf1.fragments.BlogDetailFragment"-->
+    <!--        android:label="Blog Detail">-->
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_saved_to_fragment_blog_detail"-->
-<!--            app:destination="@id/fragment_blog_detail" />-->
+    <!--        <argument-->
+    <!--            android:name="blog"-->
+    <!--            app:argType="com.example.doanf1.services.models.Blog"-->
+    <!--            />-->
 
-<!--    </fragment>-->
+    <!--    </fragment>-->
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_blog_written"-->
-<!--        android:name="com.example.doanf1.fragments.BlogWrittenFragment"-->
-<!--        android:label="Blog Written">-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_blog_saved"-->
+    <!--        android:name="com.example.doanf1.fragments.BlogSavedFragment"-->
+    <!--        android:label="Blog Saved">-->
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_written_to_fragment_blog_detail"-->
-<!--            app:destination="@id/fragment_blog_detail" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_saved_to_fragment_blog_detail"-->
+    <!--            app:destination="@id/fragment_blog_detail" />-->
 
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_blog_written_to_fragment_edit_blog"-->
-<!--            app:destination="@id/fragment_edit_blog" />-->
+    <!--    </fragment>-->
 
-<!--        <argument-->
-<!--            android:name="blog"-->
-<!--            app:argType="com.example.doanf1.services.models.Blog"-->
-<!--            />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_blog_written"-->
+    <!--        android:name="com.example.doanf1.fragments.BlogWrittenFragment"-->
+    <!--        android:label="Blog Written">-->
 
-<!--    </fragment>-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_written_to_fragment_blog_detail"-->
+    <!--            app:destination="@id/fragment_blog_detail" />-->
+
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_blog_written_to_fragment_edit_blog"-->
+    <!--            app:destination="@id/fragment_edit_blog" />-->
+
+    <!--        <argument-->
+    <!--            android:name="blog"-->
+    <!--            app:argType="com.example.doanf1.services.models.Blog"-->
+    <!--            />-->
+
+    <!--    </fragment>-->
 
     <!--    &lt;!&ndash;profile&ndash;&gt;-->
     <fragment
@@ -120,15 +147,15 @@
         android:name="com.example.qlsv.fragments.ChangePasswordFragment"
         android:label="Change Password"
         />
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_terms_conditions"-->
-<!--        android:name="com.example.doanf1.fragments.TermsConditionsFragment"-->
-<!--        android:label="Terms And Conditions"-->
-<!--        />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_terms_conditions"-->
+    <!--        android:name="com.example.doanf1.fragments.TermsConditionsFragment"-->
+    <!--        android:label="Terms And Conditions"-->
+    <!--        />-->
     <fragment
         android:id="@+id/fragment_edit_info"
         android:name="com.example.qlsv.fragments.EditInfoFragment"
-        android:label="Edit Profile Info"
+        android:label="Edit Info"
         >
     </fragment>
 
@@ -137,32 +164,32 @@
         android:name="com.example.qlsv.fragments.UserInfoFragment"
         android:label="Edit User Info">
         <action
-            android:id="@+id/action_fragment_user_info_to_fragment_edit_info"
-            app:destination="@id/fragment_edit_info"/>
+            android:id="@+id/action_userInfoFragment_to_editInfoFragment"
+            app:destination="@id/fragment_edit_info" />
 
     </fragment>
 
-    <fragment
-        android:id="@+id/fragment_profile"
-        android:name="com.example.qlsv.fragments.ProfileFragment"
-        android:label="Profile"
-        >
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_profile_to_fragment_user_info"-->
-<!--            app:destination="@id/fragment_user_info" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_profile_to_fragment_change_password"-->
-<!--            app:destination="@id/fragment_change_password" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_profile_to_fragment_terms_conditions"-->
-<!--            app:destination="@id/fragment_terms_conditions" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_profile_to_fragment_calender"-->
-<!--            app:destination="@id/fragment_calender" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_fragment_profile_to_fragment_love"-->
-<!--            app:destination="@id/fragment_love" />-->
-    </fragment>
+    <!--    <fragment-->
+    <!--        android:id="@+id/fragment_profile"-->
+    <!--        android:name="com.example.qlsv.fragments.ProfileFragment"-->
+    <!--        android:label="Profile"-->
+    <!--        >-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_profile_to_fragment_user_info"-->
+    <!--            app:destination="@id/fragment_user_info" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_profile_to_fragment_change_password"-->
+    <!--            app:destination="@id/fragment_change_password" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_profile_to_fragment_terms_conditions"-->
+    <!--            app:destination="@id/fragment_terms_conditions" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_profile_to_fragment_calender"-->
+    <!--            app:destination="@id/fragment_calender" />-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_fragment_profile_to_fragment_love"-->
+    <!--            app:destination="@id/fragment_love" />-->
+    <!--    </fragment>-->
 
 
 </navigation>

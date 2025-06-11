@@ -85,5 +85,4 @@ public class HomepageFragment extends Fragment {
             }
         });
     }
-
 }

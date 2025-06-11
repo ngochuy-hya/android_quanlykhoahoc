@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:background="@color/white"
-    android:id="@+id/fragment_profile"
+    android:id="@+id/profileFragment"
     tools:context=".fragments.ProfileFragment"
     >
     <LinearLayout
@@ -110,21 +110,20 @@
                     </LinearLayout>
 
 
-                    <!-- Lịch khám -->
-                    <LinearLayout
-                        android:id="@+id/navigateToAppointmentSchedule"
-                        style="@style/Profile_NavItem_Layout">
-                        <ImageView
-                            style="@style/Profile_NavItem_Img"
-                            android:src="@drawable/ic_appointment"
-                            app:tint="@color/black" />
-                        <TextView
-                            android:text="Examination schedule"
-                            style="@style/Profile_NavItem_Text"/>
-                        <ImageView
-                            style="@style/Profile_NavItem_Img"
-                            android:src="@drawable/ic_chevron_right" />
-                    </LinearLayout>
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/navigateToAppointmentSchedule"-->
+<!--                        style="@style/Profile_NavItem_Layout">-->
+<!--                        <ImageView-->
+<!--                            style="@style/Profile_NavItem_Img"-->
+<!--                            android:src="@drawable/ic_appointment"-->
+<!--                            app:tint="@color/black" />-->
+<!--                        <TextView-->
+<!--                            android:text="Examination schedule"-->
+<!--                            style="@style/Profile_NavItem_Text"/>-->
+<!--                        <ImageView-->
+<!--                            style="@style/Profile_NavItem_Img"-->
+<!--                            android:src="@drawable/ic_chevron_right" />-->
+<!--                    </LinearLayout>-->
 
                     <!-- Thay đổi mật khẩu -->
                     <LinearLayout
